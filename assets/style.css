@@ -178,8 +178,9 @@
     transform:translateX(-50%);
     max-width:calc(100% - 12px);
   }
-  /* Separate the studio tagline from the wider greeting pill. */
+  /* Place only the studio tagline halfway between the greeting pill and title. */
   .hero-copy{padding-top:22px}
+  .hero-copy > .eyebrow{position:relative;top:21px}
 }
 @media(max-width:480px){
   .art-caption{font-size:11px;padding:10px 15px}
