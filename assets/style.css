@@ -76,7 +76,8 @@
 
 /* DESIGN and PRINT: keep the approved illustration proportions, without stretching.
    Their built-in captions are covered by a fade so the real HTML labels match other tiles. */
-.tile.tile-coral,.tile.tile-peach{background-size:cover;background-position:center center}
+/* Keep baked-in captions and arrows from bleeding through the translucent 1px border. */
+.tile.tile-coral,.tile.tile-peach{background-size:cover;background-position:center center;background-clip:padding-box}
 .tile.tile-coral::before{
   opacity:1;
   background:linear-gradient(to bottom,transparent 39%,rgba(48,33,31,.86) 51%,#30211f 62%);
