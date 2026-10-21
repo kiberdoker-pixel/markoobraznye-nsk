@@ -62,8 +62,8 @@
   background-position:center center;
   /* retain original rounded tile layout, animations, hover behavior and links */
 }
-.tile.tile-coral{background-image:linear-gradient(0deg,rgba(44,28,28,.48),transparent 57%),url("tile-1.webp")}
-.tile.tile-peach{background-image:linear-gradient(0deg,rgba(43,32,26,.48),transparent 57%),url("tile-2.webp")}
+.tile.tile-coral{background-image:url("tile-1-detailed.webp")}
+.tile.tile-peach{background-image:url("tile-2-detailed.webp")}
 .tile.tile-purple{background-image:linear-gradient(0deg,rgba(38,30,47,.49),transparent 57%),url("tile-3.webp")}
 .tile.tile-green{background-image:linear-gradient(0deg,rgba(24,42,34,.49),transparent 57%),url("tile-4.webp")}
 .tile.tile-blue{background-image:linear-gradient(0deg,rgba(26,39,54,.49),transparent 57%),url("tile-5.webp")}
@@ -73,3 +73,12 @@
 .tile.tile-green .tile-icon,.tile.tile-blue .tile-icon,.tile.tile-contact .tile-icon{opacity:.3}
 .tile .tile-bottom{text-shadow:0 2px 13px rgba(0,0,0,.48)}
 .tile .tile-count{text-shadow:0 2px 8px rgba(0,0,0,.5)}
+
+/* Approved detailed illustrations for DESIGN and PRINT; preserve other four tiles. */
+.tile.tile-coral,.tile.tile-peach{background-size:100% 100%;background-position:center center}
+.tile.tile-coral::before,.tile.tile-coral::after,
+.tile.tile-peach::before,.tile.tile-peach::after{opacity:0}
+.tile.tile-coral .tile-count,.tile.tile-coral .tile-bottom,.tile.tile-coral .tile-go,
+.tile.tile-peach .tile-count,.tile.tile-peach .tile-bottom,.tile.tile-peach .tile-go{opacity:0}
+/* All labels, navigation and semantic HTML remain in the document.
+   The approved artwork itself contains the visible text and arrows. */
