@@ -49,3 +49,27 @@
   .tile-heart,.tile-squares .outer-square,.tile-squares .inner-square,.tile-fly{animation:none!important;transform:none!important}
   .tile-web-icon .web-route-arrow{visibility:hidden}
 }
+
+/* Kapibara AI illustrated service tiles: approved mascot artwork */
+.tile.tile-coral,
+.tile.tile-peach,
+.tile.tile-purple,
+.tile.tile-green,
+.tile.tile-blue,
+.tile.tile-contact{
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center center;
+  /* retain original rounded tile layout, animations, hover behavior and links */
+}
+.tile.tile-coral{background-image:linear-gradient(0deg,rgba(44,28,28,.48),transparent 57%),url("tile-1.webp")}
+.tile.tile-peach{background-image:linear-gradient(0deg,rgba(43,32,26,.48),transparent 57%),url("tile-2.webp")}
+.tile.tile-purple{background-image:linear-gradient(0deg,rgba(38,30,47,.49),transparent 57%),url("tile-3.webp")}
+.tile.tile-green{background-image:linear-gradient(0deg,rgba(24,42,34,.49),transparent 57%),url("tile-4.webp")}
+.tile.tile-blue{background-image:linear-gradient(0deg,rgba(26,39,54,.49),transparent 57%),url("tile-5.webp")}
+.tile.tile-contact{background-image:linear-gradient(0deg,rgba(50,38,28,.49),transparent 57%),url("tile-6.webp")}
+/* Animated mini-icons remain present, but no longer obscure the mascot illustrations. */
+.tile.tile-coral .tile-icon,.tile.tile-peach .tile-icon,.tile.tile-purple .tile-icon,
+.tile.tile-green .tile-icon,.tile.tile-blue .tile-icon,.tile.tile-contact .tile-icon{opacity:.3}
+.tile .tile-bottom{text-shadow:0 2px 13px rgba(0,0,0,.48)}
+.tile .tile-count{text-shadow:0 2px 8px rgba(0,0,0,.5)}
