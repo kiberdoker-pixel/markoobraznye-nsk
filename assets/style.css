@@ -156,3 +156,29 @@
     pointer-events:none;
   }
 }
+
+/* Kapibara AI: responsive expanded greeting pill. */
+.art-caption{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  width:max-content;
+  max-width:calc(100% - 16px);
+  padding:11px 19px;
+  text-align:center;
+  line-height:1.4;
+  white-space:normal;
+}
+.art-caption-dot{flex:0 0 8px;margin-right:0}
+@media(max-width:720px){
+  .art-caption{
+    left:50%;
+    right:auto;
+    transform:translateX(-50%);
+    max-width:calc(100% - 12px);
+  }
+}
+@media(max-width:480px){
+  .art-caption{font-size:11px;padding:10px 15px}
+}
