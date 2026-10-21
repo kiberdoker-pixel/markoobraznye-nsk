@@ -81,8 +81,14 @@
 .tile.tile-coral::after,.tile.tile-peach::after{opacity:0}
 .tile.tile-coral .tile-count,.tile.tile-coral .tile-bottom,.tile.tile-coral .tile-go,
 .tile.tile-peach .tile-count,.tile.tile-peach .tile-bottom,.tile.tile-peach .tile-go{opacity:1}
-/* These two illustrations already contain the star artwork. */
-.tile.tile-coral .tile-icon,.tile.tile-peach .tile-icon{display:none}
+/* Restore the rotating snowflake and star above the approved artwork.
+   The existing capy-star animation supplies independent gentle motion. */
+.tile.tile-coral .tile-icon,.tile.tile-peach .tile-icon{
+  display:inline-block;
+  opacity:.85;
+  z-index:1;
+  filter:drop-shadow(0 0 7px var(--glow-bright));
+}
 
 /* Only 4, 5 and 6 require their existing small-label mask on mobile.
    Fresh images for 1 and 2 need none, because labels were removed in the assets. */
