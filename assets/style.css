@@ -74,11 +74,44 @@
 .tile .tile-bottom{text-shadow:0 2px 13px rgba(0,0,0,.48)}
 .tile .tile-count{text-shadow:0 2px 8px rgba(0,0,0,.5)}
 
-/* Approved detailed illustrations for DESIGN and PRINT; preserve other four tiles. */
-.tile.tile-coral,.tile.tile-peach{background-size:100% 100%;background-position:center center}
-.tile.tile-coral::before,.tile.tile-coral::after,
-.tile.tile-peach::before,.tile.tile-peach::after{opacity:0}
+/* DESIGN and PRINT: keep the approved illustration proportions, without stretching.
+   Their built-in captions are covered by a fade so the real HTML labels match other tiles. */
+.tile.tile-coral,.tile.tile-peach{background-size:cover;background-position:center center}
+.tile.tile-coral::before{
+  opacity:1;
+  background:linear-gradient(to bottom,transparent 39%,rgba(48,33,31,.86) 51%,#30211f 62%);
+}
+.tile.tile-peach::before{
+  opacity:1;
+  background:linear-gradient(to bottom,transparent 39%,rgba(48,39,34,.86) 51%,#302722 62%);
+}
+.tile.tile-coral::after,.tile.tile-peach::after{opacity:0}
 .tile.tile-coral .tile-count,.tile.tile-coral .tile-bottom,.tile.tile-coral .tile-go,
-.tile.tile-peach .tile-count,.tile.tile-peach .tile-bottom,.tile.tile-peach .tile-go{opacity:0}
-/* All labels, navigation and semantic HTML remain in the document.
-   The approved artwork itself contains the visible text and arrows. */
+.tile.tile-peach .tile-count,.tile.tile-peach .tile-bottom,.tile.tile-peach .tile-go{opacity:1}
+/* These two illustrations already contain the star artwork. */
+.tile.tile-coral .tile-icon,.tile.tile-peach .tile-icon{display:none}
+
+/* On narrow two-column layouts, the artwork includes small printed category
+   labels in tiles 1, 2, 4, 5 and 6. Mask only that corner so HTML labels
+   remain crisp, readable and never appear doubled. Tile 3 stays unchanged. */
+@media(max-width:720px){
+  .tile.tile-coral{--tile-label-mask:#30201f}
+  .tile.tile-peach{--tile-label-mask:#302722}
+  .tile.tile-green{--tile-label-mask:#1c332a}
+  .tile.tile-blue{--tile-label-mask:#202e3f}
+  .tile.tile-contact{--tile-label-mask:#352b21}
+  .tile.tile-coral::after,.tile.tile-peach::after,
+  .tile.tile-green::after,.tile.tile-blue::after,.tile.tile-contact::after{
+    content:"";
+    opacity:1;
+    inset:0 auto auto 0;
+    width:100%;
+    height:58px;
+    border:0;
+    border-radius:0;
+    background:linear-gradient(to right,var(--tile-label-mask) 0%,var(--tile-label-mask) 67%,transparent 100%);
+    -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 63%,transparent 100%);
+    mask-image:linear-gradient(to bottom,#000 0%,#000 63%,transparent 100%);
+    pointer-events:none;
+  }
+}
